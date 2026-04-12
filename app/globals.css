@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #203040;
+  --navy-deep: #202040;
+  --green: #b0e070;
+  --green-hi: #c8e890;
+  --blue-acc: #406080;
+  --blue-lt: #527090;
+
+  --background: 0 0% 100%;
+  --foreground: 210 29% 18%;
+  --card: 0 0% 100%;
+  --card-foreground: 210 29% 18%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 210 29% 18%;
+  --primary: 210 29% 18%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 20% 96%;
+  --secondary-foreground: 210 29% 18%;
+  --muted: 210 20% 96%;
+  --muted-foreground: 210 15% 46%;
+  --accent: 210 33% 38%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 210 20% 90%;
+  --input: 210 20% 90%;
+  --ring: 210 29% 18%;
+  --radius: 0.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-dm-sans), "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.7;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom section header pattern */
+.section-overline {
+  @apply text-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3;
+}
+
+.section-heading {
+  @apply font-serif text-4xl lg:text-5xl text-navy leading-tight;
+}
+
+.section-rule {
+  @apply h-0.5 w-16 bg-brand-green mt-5 mb-10;
+}
+
+.section-rule-center {
+  @apply h-0.5 w-16 bg-brand-green mt-5 mb-10 mx-auto;
+}
+
+/* Noise texture overlay for hero */
+.hero-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
