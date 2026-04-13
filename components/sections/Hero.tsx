@@ -1,10 +1,11 @@
 "use client";
 
-import { Phone, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import ScheduleModal from "@/components/ScheduleModal";
 
 export default function Hero() {
-  const [showPhone, setShowPhone] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const scrollToServices = () => {
     document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" });
@@ -38,6 +39,8 @@ export default function Hero() {
       {/* Green accent bar — top */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-brand-green" />
 
+      <ScheduleModal open={modalOpen} onClose={() => setModalOpen(false)} />
+
       {/* Content — split layout */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-24 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -69,31 +72,13 @@ export default function Hero() {
               with the same care we&apos;d give our own family.
             </p>
 
-            {/* CTAs */}
+            {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <div className="flex flex-col items-start gap-2">
-                <button
-                  onClick={() => setShowPhone((prev) => !prev)}
-                  className="inline-flex items-center justify-center gap-2 bg-brand-green text-navy font-bold text-base px-8 py-4 rounded-md hover:bg-brand-green-hi transition-all duration-300 shadow-lg shadow-brand-green/20 hover:shadow-brand-green/30 hover:scale-[1.02]"
-                >
-                  <Phone className="w-5 h-5" />
-                  Schedule an Inspection
-                </button>
-                {showPhone && (
-                  <a
-                    href="tel:2026558567"
-                    className="inline-flex items-center gap-2 text-brand-green font-semibold text-lg pl-2 hover:text-brand-green-hi transition-colors duration-200"
-                  >
-                    <Phone className="w-4 h-4" />
-                    202-655-8567
-                  </a>
-                )}
-              </div>
               <button
-                onClick={scrollToServices}
-                className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold text-base px-8 py-4 rounded-md hover:border-brand-green hover:text-brand-green transition-all duration-300"
+                onClick={() => setModalOpen(true)}
+                className="inline-flex items-center justify-center gap-2 bg-brand-green text-navy font-bold text-base px-8 py-4 rounded-md hover:bg-brand-green-hi transition-all duration-300 shadow-lg shadow-brand-green/20 hover:shadow-brand-green/30 hover:scale-[1.02]"
               >
-                Explore Services
+                Schedule an Inspection
               </button>
             </div>
           </div>
