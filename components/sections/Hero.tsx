@@ -1,8 +1,11 @@
 "use client";
 
 import { Phone, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 export default function Hero() {
+  const [showPhone, setShowPhone] = useState(false);
+
   const scrollToServices = () => {
     document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -43,7 +46,6 @@ export default function Hero() {
           <div className="flex-1 min-w-0">
             {/* Overline */}
             <div className="flex items-center gap-3 mb-8">
-              <div className="h-px w-10 bg-brand-green" />
               <span className="text-brand-green text-xs font-semibold tracking-[0.25em] uppercase">
                 InterNACHI Certified &nbsp;·&nbsp; Veteran-Owned
               </span>
@@ -76,13 +78,24 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:2026558567"
-                className="inline-flex items-center justify-center gap-2 bg-brand-green text-navy font-bold text-base px-8 py-4 rounded-md hover:bg-brand-green-hi transition-all duration-300 shadow-lg shadow-brand-green/20 hover:shadow-brand-green/30 hover:scale-[1.02]"
-              >
-                <Phone className="w-5 h-5" />
-                Schedule an Inspection
-              </a>
+              <div className="flex flex-col items-start gap-2">
+                <button
+                  onClick={() => setShowPhone((prev) => !prev)}
+                  className="inline-flex items-center justify-center gap-2 bg-brand-green text-navy font-bold text-base px-8 py-4 rounded-md hover:bg-brand-green-hi transition-all duration-300 shadow-lg shadow-brand-green/20 hover:shadow-brand-green/30 hover:scale-[1.02]"
+                >
+                  <Phone className="w-5 h-5" />
+                  Schedule an Inspection
+                </button>
+                {showPhone && (
+                  <a
+                    href="tel:2026558567"
+                    className="inline-flex items-center gap-2 text-brand-green font-semibold text-lg pl-2 hover:text-brand-green-hi transition-colors duration-200"
+                  >
+                    <Phone className="w-4 h-4" />
+                    202-655-8567
+                  </a>
+                )}
+              </div>
               <button
                 onClick={scrollToServices}
                 className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold text-base px-8 py-4 rounded-md hover:border-brand-green hover:text-brand-green transition-all duration-300"
