@@ -44,13 +44,6 @@ export default function Hero() {
 
           {/* Left: text */}
           <div className="flex-1 min-w-0">
-            {/* Overline */}
-            <div className="flex items-center gap-3 mb-8">
-              <span className="text-brand-green text-xs font-semibold tracking-[0.25em] uppercase">
-                InterNACHI Certified &nbsp;·&nbsp; Veteran-Owned
-              </span>
-            </div>
-
             {/* Headline */}
             <h1 className="font-serif text-white leading-[1.05] mb-4">
               <span className="block text-5xl sm:text-6xl lg:text-6xl xl:text-7xl">

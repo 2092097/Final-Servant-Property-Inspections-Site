@@ -117,6 +117,9 @@ export default function Navbar() {
               >
                 Email Us
               </a>
+              <p className="text-white/60 text-xs text-center mt-2">
+                servantpropertyinspections@gmail.com
+              </p>
             </div>
           </SheetContent>
         </Sheet>
