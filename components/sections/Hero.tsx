@@ -35,58 +35,91 @@ export default function Hero() {
       {/* Green accent bar — top */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-brand-green" />
 
-      {/* Content */}
+      {/* Content — split layout */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-24 w-full">
-        <div className="max-w-3xl">
-          {/* Overline */}
-          <div className="flex items-center gap-3 mb-8">
-            <div className="h-px w-10 bg-brand-green" />
-            <span className="text-brand-green text-xs font-semibold tracking-[0.25em] uppercase">
-              InterNACHI Certified &nbsp;·&nbsp; Veteran-Owned
-            </span>
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+          {/* Left: text */}
+          <div className="flex-1 min-w-0">
+            {/* Overline */}
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px w-10 bg-brand-green" />
+              <span className="text-brand-green text-xs font-semibold tracking-[0.25em] uppercase">
+                InterNACHI Certified &nbsp;·&nbsp; Veteran-Owned
+              </span>
+            </div>
+
+            {/* Headline */}
+            <h1 className="font-serif text-white leading-[1.05] mb-4">
+              <span className="block text-5xl sm:text-6xl lg:text-6xl xl:text-7xl">
+                From Anxious
+              </span>
+              <span className="block text-5xl sm:text-6xl lg:text-6xl xl:text-7xl text-brand-green">
+                to Assured.
+              </span>
+            </h1>
+
+            {/* Tagline */}
+            <p className="font-serif italic text-white/70 text-xl sm:text-2xl mb-8 tracking-wide">
+              Before you sign.
+            </p>
+
+            {/* Body copy */}
+            <p
+              className="text-white/60 text-lg leading-relaxed mb-10 max-w-xl"
+              style={{ fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}
+            >
+              A thorough, honest property inspection gives you the clarity to move
+              forward with confidence. Serving Kennesaw, GA and Metro Atlanta
+              with the same care we&apos;d give our own family.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="tel:2026558567"
+                className="inline-flex items-center justify-center gap-2 bg-brand-green text-navy font-bold text-base px-8 py-4 rounded-md hover:bg-brand-green-hi transition-all duration-300 shadow-lg shadow-brand-green/20 hover:shadow-brand-green/30 hover:scale-[1.02]"
+              >
+                <Phone className="w-5 h-5" />
+                Schedule an Inspection
+              </a>
+              <button
+                onClick={scrollToServices}
+                className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold text-base px-8 py-4 rounded-md hover:border-brand-green hover:text-brand-green transition-all duration-300"
+              >
+                Explore Services
+              </button>
+            </div>
           </div>
 
-          {/* Headline */}
-          <h1 className="font-serif text-white leading-[1.05] mb-4">
-            <span className="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl">
-              From Anxious
-            </span>
-            <span className="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-brand-green">
-              to Assured.
-            </span>
-          </h1>
-
-          {/* Tagline */}
-          <p className="font-serif italic text-white/70 text-xl sm:text-2xl mb-8 tracking-wide">
-            Before you sign.
-          </p>
-
-          {/* Body copy */}
-          <p
-            className="text-white/60 text-lg leading-relaxed mb-10 max-w-xl"
-            style={{ fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}
-          >
-            A thorough, honest property inspection gives you the clarity to move
-            forward with confidence. Serving Kennesaw, GA and Metro Atlanta
-            with the same care we&apos;d give our own family.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="tel:2026558567"
-              className="inline-flex items-center justify-center gap-2 bg-brand-green text-navy font-bold text-base px-8 py-4 rounded-md hover:bg-brand-green-hi transition-all duration-300 shadow-lg shadow-brand-green/20 hover:shadow-brand-green/30 hover:scale-[1.02]"
+          {/* Right: house image */}
+          <div className="flex-1 w-full lg:max-w-[520px]">
+            <div
+              className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10"
+              style={{ height: "480px" }}
             >
-              <Phone className="w-5 h-5" />
-              Schedule an Inspection
-            </a>
-            <button
-              onClick={scrollToServices}
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold text-base px-8 py-4 rounded-md hover:border-brand-green hover:text-brand-green transition-all duration-300"
-            >
-              Explore Services
-            </button>
+              {/*
+                Rotation fix: the photo is stored rotated 90° CW.
+                After rotate(-90deg):
+                  displayed width  = element height → set to 700px (covers container width)
+                  displayed height = element width  → set to 480px (matches container height)
+              */}
+              <img
+                src="/house.jpeg"
+                alt="Georgia home inspected by Servant Property Inspections"
+                style={{
+                  position: "absolute",
+                  width: "480px",
+                  height: "700px",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%) rotate(0deg)",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
           </div>
+
         </div>
       </div>
 
@@ -98,9 +131,6 @@ export default function Hero() {
       >
         <ChevronDown className="w-7 h-7" />
       </button>
-
-      {/* Bottom decorative fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/5 to-transparent pointer-events-none" />
     </section>
   );
 }
