@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, Phone } from "lucide-react";
+import { Menu } from "lucide-react";
 import Logo from "@/components/Logo";
 import {
   Sheet,
@@ -76,15 +76,6 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <a
-          href="tel:2026558567"
-          className="hidden md:inline-flex items-center gap-2 bg-brand-green text-navy font-bold text-sm px-5 py-2.5 rounded-md hover:bg-brand-green-hi transition-colors duration-200"
-          aria-label="Call us at 202-655-8567"
-        >
-          <Phone className="w-4 h-4" />
-          Book Inspection
-        </a>
 
         {/* Mobile hamburger */}
         <Sheet open={open} onOpenChange={setOpen}>
@@ -121,15 +112,8 @@ export default function Navbar() {
 
             <div className="mt-8 px-4">
               <a
-                href="tel:2026558567"
-                className="flex items-center justify-center gap-2 bg-brand-green text-navy font-bold text-base w-full py-4 rounded-md hover:bg-brand-green-hi transition-colors duration-200"
-              >
-                <Phone className="w-5 h-5" />
-                Call 202-655-8567
-              </a>
-              <a
                 href="mailto:servantpropertyinspections@gmail.com"
-                className="flex items-center justify-center gap-2 border-2 border-brand-green text-brand-green font-semibold text-sm w-full py-3 rounded-md hover:bg-brand-green/10 transition-colors duration-200 mt-3"
+                className="flex items-center justify-center gap-2 border-2 border-brand-green text-brand-green font-semibold text-sm w-full py-3 rounded-md hover:bg-brand-green/10 transition-colors duration-200"
               >
                 Email Us
               </a>
