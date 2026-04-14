@@ -9,7 +9,7 @@ const steps = [
     number: "02",
     title: "Inspect",
     description:
-      "Charles personally walks through every accessible area of the property — foundation, systems, roof, and everything in between.",
+      "The inspector walks through every accessible area of the property — foundation, systems, roof, and everything in between.",
   },
   {
     number: "03",
