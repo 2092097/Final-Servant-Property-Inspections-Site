@@ -297,7 +297,7 @@ Notes: ${form.notes}
                 Select Your Services
               </h3>
               <p className="text-accent-light text-sm mb-6">
-                Choose all inspections you'd like performed.
+                Choose all inspections you&apos;d like performed.
               </p>
               <div className="space-y-2">
                 {services.map((s) => {
@@ -336,7 +336,7 @@ Notes: ${form.notes}
                 Schedule & Contact
               </h3>
               <p className="text-accent-light text-sm mb-6">
-                When works best for you? We'll confirm your appointment promptly.
+                When works best for you? We&apos;ll confirm your appointment promptly.
               </p>
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-3">
@@ -443,7 +443,7 @@ Notes: ${form.notes}
                 Request Submitted!
               </h3>
               <p className="text-accent-light text-sm leading-relaxed max-w-xs mx-auto mb-6">
-                Your inspection request has been sent. We'll contact you within one
+                Your inspection request has been sent. We&apos;ll contact you within one
                 business day to confirm your appointment.
               </p>
               <p className="text-accent text-xs">
