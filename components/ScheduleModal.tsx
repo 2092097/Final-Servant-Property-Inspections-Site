@@ -65,6 +65,13 @@ export default function ScheduleModal({ open, onClose }: Props) {
     }));
 
   const handleSubmit = () => {
+    if (typeof window !== "undefined") {
+      const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+      if (typeof w.gtag === "function") {
+        w.gtag('event', 'conversion', { send_to: 'AW-18090629869/gMbkCLLRgaYcEO21pLJD' });
+      }
+    }
+
     const subject = `Inspection Request – ${form.address}, ${form.city}, ${form.state}`;
     const body = `
 NEW INSPECTION REQUEST
