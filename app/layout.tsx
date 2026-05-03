@@ -40,7 +40,7 @@ export default function RootLayout({
     <html lang="en" className={`${dmSans.variable} ${playfair.variable}`}>
       <head>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18090629869"
+          src="https://www.googletagmanager.com/gtag/js?id=G-HY1CNS2X1K"
           strategy="afterInteractive"
         />
         <Script id="google-tag" strategy="afterInteractive">
@@ -48,6 +48,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            gtag('config', 'G-HY1CNS2X1K');
             gtag('config', 'AW-18090629869');
           `}
         </Script>
